@@ -3,7 +3,7 @@
 
     var assert = window.chai.assert;
 
-    suite('tests for species constructor', function() {
+    suite('tests for species constructors', function() {
 
         test('species constructors inherits name trait from Animal', function() {
             var poodle = new window.zoo.Dog('Chelsea');
