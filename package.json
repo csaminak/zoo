@@ -1,0 +1,26 @@
+{
+  "name": "zoo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bower": "^1.7.9",
+    "jquery": "^3.1.0",
+    "jquery-mockjax": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "jquery": "^3.1.0",
+    "jquery-mockjax": "^2.2.0",
+    "mocha": "^2.5.3"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}
