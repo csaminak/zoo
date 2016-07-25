@@ -2,15 +2,19 @@
     'use strict';
     window.zoo = ns = (ns || {});
 
-
     ns.Animal = function Animal(name){
-        // var birthtime = Date.now();
-
         this.name = name;
         this.dob = new Date();
-        // this.age = Date.now() - birthtime;
     };
 
+    ns.Animal.prototype.age = function age(){
+        var birthYear = this.dob.getFullYear();
+        var currentYear = (new Date()).getFullYear();
+        return currentYear - birthYear;
+    };
+
+
+    
 
 
 })(window.zoo);
