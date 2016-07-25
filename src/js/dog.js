@@ -6,7 +6,10 @@
         window.zoo.Animal.call(this, name);
     };
     ns.Dog.prototype = Object.create(window.zoo.Animal.prototype);
+    ns.Dog.prototype.constructor = ns.Dog;
+
     
+
 
 
 })(window.zoo);

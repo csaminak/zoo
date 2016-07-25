@@ -20,18 +20,29 @@
     'use strict';
     window.zoo = ns = (ns || {});
 
-    ns.Reptile = function Reptile(name) {
+    ns.Bird = function Bird(name) {
         window.zoo.Animal.call(this, name);
     };
-    ns.Reptile.prototype = Object.create(window.zoo.Animal.prototype);
+    ns.Bird.prototype = Object.create(window.zoo.Animal.prototype);
+    ns.Bird.prototype.constructor = ns.Bird;
+
+    
 
 
 
-    ns.Mammal = function Mammal(name) {
+})(window.zoo);
+
+(function(ns){
+    'use strict';
+    window.zoo = ns = (ns || {});
+
+    ns.Dog = function Dog(name) {
         window.zoo.Animal.call(this, name);
     };
-    ns.Mammal.prototype = Object.create(window.zoo.Animal.prototype);
+    ns.Dog.prototype = Object.create(window.zoo.Animal.prototype);
+    ns.Dog.prototype.constructor = ns.Dog;
 
+    
 
 
 
