@@ -22,6 +22,9 @@
      * @return      {Number}    the age of the animal in years
      */
     ns.Animal.prototype.getAge = function getAge(){
+        if (this.isDead === true) {
+            throw new Error('age cannot be calculated because animal is dead');
+        }
         var birthYear = this.dob.getFullYear();
         var currentYear = (new Date()).getFullYear();
         return currentYear - birthYear;

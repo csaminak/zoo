@@ -43,6 +43,16 @@
             assert.isTrue(evee.isDead, 'Animal has past');
         });
 
+        test('getAge on animal should result in error after animal has died', function(){
+            var chicky = new window.zoo.Animal('Tom');
+            chicky.dob = new Date('2014-10-01');
+            assert.strictEqual(chicky.getAge(), 2, 'Animal has an age!');
+            chicky.expire();
+            assert.throws(function(){
+                chicky.getAge();
+            }, Error);
+        });
+
     });
 
 
