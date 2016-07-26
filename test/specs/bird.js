@@ -11,11 +11,11 @@
             assert.strictEqual(parrot.name, 'Polly', 'the parrot has a name');
         });
 
-        // test('dogs can give birth because they are animals', function() {
-        //     var beagle = new window.zoo.Dog('Momma');
-        //     assert.isFunction(beagle.birth, 'beagle has a birth function');
-        //     assert.isObject(beagle.birth('Puppy'), 'beagle returns an object');
-        // });
+        test('birds can lay eggs', function() {
+            var crow = new window.zoo.Bird('Momma');
+            assert.isFunction(crow.layEggs, 'crow has a birth function');
+            assert.isNumber(crow.layEggs(), 'crow returns a number of eggs');
+        });
 
 
 
