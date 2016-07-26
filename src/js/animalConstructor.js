@@ -11,9 +11,9 @@
         if (!name) {
             throw new Error('Animals must have a name');
         }
-
         this.name = name;
         this.dob = new Date();
+        this.isDead = false;
     };
 
     /**
@@ -34,6 +34,16 @@
     ns.Animal.prototype.toString = function toString() {
         return 'I am an animal named, ' + this.name + '!';
     };
+
+    /**
+     * Makes the animal die.
+     * @return      Object      Animal      sets the isDead property to true.
+     */
+    ns.Animal.prototype.expire = function expire() {
+        this.isDead = true;
+    };
+
+
 
 
 })(window.zoo);
