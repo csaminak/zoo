@@ -19,6 +19,13 @@
             assert.strictEqual(chicken.age(), 0, 'animal\'s age in years');
         });
 
+        test('all species can use the toString method', function() {
+            var flamingo = new window.zoo.Bird('Pinky');
+            var mutt = new window.zoo.Dog('Rascal');
+            assert.strictEqual(flamingo.toString(), 'I am an animal named, Pinky!');
+            assert.strictEqual(mutt.toString(), 'I am an animal named, Rascal!');
+        });
+
     });
 
 

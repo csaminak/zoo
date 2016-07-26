@@ -7,7 +7,7 @@
 
         test('Dog constructors inherits name trait from Animal', function() {
             var poodle = new window.zoo.Dog('Chelsea');
-            assert.isTrue(poodle instanceof window.zoo.Dog, 'poodle is a Dog object');
+            assert.instanceOf(poodle, window.zoo.Dog, 'poodle is a Dog object');
             assert.strictEqual(poodle.name, 'Chelsea', 'the poodle has a name');
         });
 
