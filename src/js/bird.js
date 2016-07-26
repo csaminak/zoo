@@ -15,7 +15,7 @@
     ns.Bird.prototype.constructor = ns.Bird;
 
     /**
-     * Calcualtes a random number of eggs a bird can lay from 1 to 10
+     * Calculates a random number of eggs a bird can lay from 1 to 10
      * and gives an array of eggs that are new Birds.
      * @return {Array}  each index in the array is a Bird object
      */
@@ -24,7 +24,7 @@
         var eggs = Math.ceil(Math.random()*10);
         var i;
         for(i = 1; i <= eggs; i++) {
-            nest.push(new ns.Bird());
+            nest.push(new ns.Bird('egg ' + i));
         }
         return nest;
     };
@@ -36,6 +36,9 @@
      * @return {Number}     miles          The total distance in miles
      */
     ns.Bird.prototype.flight = function flight(duration){
+        if(!duration) {
+            throw new Error('must input the number of minutes bird was flying');
+        }
         var hours = duration/60;
         var speed = 60;
         var miles = speed * hours;

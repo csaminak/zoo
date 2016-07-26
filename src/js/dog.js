@@ -22,6 +22,9 @@
      * @return {Object}             a Dog object
      */
     ns.Dog.prototype.birth = function birth(puppyName){
+        if (!puppyName){
+            throw new Error('What is the puppy\'s name?');
+        }
         return new ns.Dog(puppyName);
     };
 
