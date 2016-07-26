@@ -8,7 +8,10 @@
     ns.Bird.prototype = Object.create(window.zoo.Animal.prototype);
     ns.Bird.prototype.constructor = ns.Bird;
 
-    
+    ns.Bird.prototype.layEggs = function layEggs(eggCount){
+        eggCount = Math.ceil(Math.random()*10);
+        return eggCount;
+    };
 
 
 

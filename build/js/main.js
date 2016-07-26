@@ -26,7 +26,10 @@
     ns.Bird.prototype = Object.create(window.zoo.Animal.prototype);
     ns.Bird.prototype.constructor = ns.Bird;
 
-    
+    ns.Bird.prototype.layEggs = function layEggs(eggCount){
+        eggCount = Math.ceil(Math.random()*10);
+        return eggCount;
+    };
 
 
 
@@ -42,12 +45,11 @@
     ns.Dog.prototype = Object.create(window.zoo.Animal.prototype);
     ns.Dog.prototype.constructor = ns.Dog;
 
-    ns.Dog.prototype.birth = function birth(){
-        return new ns.Dog(name);
+    ns.Dog.prototype.birth = function birth(puppyName){
+        return new ns.Dog(puppyName);
     };
 
-
-
+    
 })(window.zoo);
 
 //# sourceMappingURL=main.js.map
