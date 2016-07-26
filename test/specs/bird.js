@@ -25,6 +25,15 @@
             }, Error);
         });
 
+        test('if bird dies, animal cannot getAge', function() {
+            var cardinal = new window.zoo.Bird('Ruby');
+            assert.strictEqual(cardinal.isDead, false, 'Bird Object has is not dead');
+            cardinal.expire();
+            assert.isTrue(cardinal.isDead, 'cardinal has died');
+            assert.throws(function() {
+                cardinal.getAge();
+            }, Error);
+        });
 
     });
 

@@ -27,6 +27,12 @@
             }, Error);
         });
 
+        test('trick function must have an argument', function() {
+            var chow = new window.zoo.Dog('joker');
+            assert.throws(function(){
+                chow.tricks();
+            }, Error);
+        });
 
     });
 
