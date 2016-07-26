@@ -8,6 +8,10 @@
      * @return {Object}     ns.Animal   Animal object
     */
     ns.Animal = function Animal(name){
+        if (!name) {
+            throw new Error('Animals must have a name');
+        }
+
         this.name = name;
         this.dob = new Date();
     };

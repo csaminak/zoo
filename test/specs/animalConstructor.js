@@ -5,13 +5,23 @@
 
     suite('tests for animal constructor', function() {
 
-        test('animal constructor has name and dob', function() {
+        test('animal constructor has name', function() {
             var turtle = new window.zoo.Animal('Lily');
-            var date = new Date();
             assert.strictEqual(turtle.name, 'Lily', 'species has a name!');
-            assert.strictEqual(turtle.dob.getMonth(), date.getMonth(), 'birth month matches');
-            assert.strictEqual(turtle.dob.getFullYear(), date.getFullYear(), 'birth year matches');
-            assert.strictEqual(turtle.dob.getDate(), date.getDate(), 'birth date matches');
+        });
+
+        test('Animal must have a name argument', function() {
+            assert.throws(function(){
+                var bob = new window.zoo.Animal();
+            }, Error);
+        });
+
+        test('animal constructor has a dob', function() {
+            var squirtle = new window.zoo.Animal('Jade');
+            var date = new Date();
+            assert.strictEqual(squirtle.dob.getMonth(), date.getMonth(), 'birth month matches');
+            assert.strictEqual(squirtle.dob.getFullYear(), date.getFullYear(), 'birth year matches');
+            assert.strictEqual(squirtle.dob.getDate(), date.getDate(), 'birth date matches');
         });
 
         test('age for animals can be calculated', function() {
