@@ -2,7 +2,12 @@
     'use strict';
     window.zoo = ns = (ns || {});
 
-
+    /**
+     * A constructor function that allows any Bird in the current context and
+     * and replace it in the Animal constructor.
+     * @param   {String}   name    The name of the Bird
+     * @return  {Object}   Bird    Has same properties as animal constructor
+     */
     ns.Bird = function Bird(name) {
         window.zoo.Animal.call(this, name);
     };
@@ -28,7 +33,7 @@
      * Gives the distance a bird flies given a duration and converts it into
      * hours given the average speed is 60 mph for a bird.
      * @param  {Number}     duration     Must be in minutes
-     * @return {Number}                  The total distance in miles
+     * @return {Number}     miles          The total distance in miles
      */
     ns.Bird.prototype.flight = function flight(duration){
         var hours = duration/60;

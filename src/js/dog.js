@@ -2,11 +2,18 @@
     'use strict';
     window.zoo = ns = (ns || {});
 
+    /**
+     * A constructor function that allows any Dog in the current context and
+     * and replace it in the Animal constructor.
+     * @param   {String}   name    The name of the Dog
+     * @return  {Object}   Dog    Has same properties as animal constructor
+     */
     ns.Dog = function Dog(name) {
         window.zoo.Animal.call(this, name);
     };
     ns.Dog.prototype = Object.create(window.zoo.Animal.prototype);
     ns.Dog.prototype.constructor = ns.Dog;
+
 
     /**
      * The Dog object has a birth function in which the dog
@@ -17,6 +24,7 @@
     ns.Dog.prototype.birth = function birth(puppyName){
         return new ns.Dog(puppyName);
     };
+
 
     /**
      * tricks takes a number from 1 to 5, with each number representing a
