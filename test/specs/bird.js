@@ -13,8 +13,8 @@
 
         test('birds can lay eggs', function() {
             var crow = new window.zoo.Bird('Momma');
-            assert.isFunction(crow.layEggs, 'crow has a birth function');
-            assert.isNumber(crow.layEggs(), 'crow returns a number of eggs');
+            assert.isFunction(crow.layEggs, 'crow has a layEggs function');
+            assert.isArray(crow.layEggs(), 'crow returns an array of Bird objects');
         });
 
 
