@@ -24,8 +24,7 @@
      * @param  {Number}   number  A number from 1-5
      * @return {String}           A string with the type of trick the dog knows
      */
-    ns.Dog.prototype.tricks = function tricks(number){
-        var num = Number(number);
+    ns.Dog.prototype.tricks = function tricks(num) {
         if (num === 1) {
             return 'Dog knows speak, woof!';
         } else if (num === 2) {

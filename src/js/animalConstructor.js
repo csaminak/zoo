@@ -13,5 +13,9 @@
         return currentYear - birthYear;
     };
 
+    ns.Animal.prototype.toString = function() {
+        return 'I am an animal named, ' + this.name + '!';
+    };
+
 
 })(window.zoo);
