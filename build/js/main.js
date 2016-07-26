@@ -42,7 +42,9 @@
     ns.Dog.prototype = Object.create(window.zoo.Animal.prototype);
     ns.Dog.prototype.constructor = ns.Dog;
 
-    
+    ns.Dog.prototype.birth = function birth(){
+        return new ns.Dog(name);
+    };
 
 
 
