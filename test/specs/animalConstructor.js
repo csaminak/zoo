@@ -16,7 +16,7 @@
 
         test('age for animals can be calculated', function() {
             var chicken = new window.zoo.Animal('bob');
-            assert.strictEqual(chicken.age(), 0, 'animal\'s age in years');
+            assert.strictEqual(chicken.getAge(), 0, 'animal\'s age in years');
         });
 
         test('all species can use the toString method', function() {
