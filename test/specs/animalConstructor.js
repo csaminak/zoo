@@ -36,6 +36,13 @@
             assert.strictEqual(mutt.toString(), 'I am an animal named, Rascal!');
         });
 
+        test('Animals can die', function(){
+            var evee = new window.zoo.Animal('Evee');
+            assert.isNotTrue(evee.isDead, 'Animal is not dead');
+            evee.expire();
+            assert.isTrue(evee.isDead, 'Animal has past');
+        });
+
     });
 
 
