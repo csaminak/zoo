@@ -20,6 +20,12 @@
                                     'beagle can give birth to another Dog object');
         });
 
+        test('birth function must have an argument', function() {
+            var pomerian = new window.zoo.Dog('Sparky');
+            assert.throws(function(){
+                pomerian.birth();
+            }, Error);
+        });
 
 
     });

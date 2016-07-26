@@ -8,6 +8,7 @@
         test('Bird constructors inherits name trait from Animal', function() {
             var parrot = new window.zoo.Bird('Polly');
             assert.instanceOf(parrot, window.zoo.Bird, 'parrot is a Bird object');
+            assert.instanceOf(parrot, window.zoo.Animal, 'parrot is an Animal object');
             assert.strictEqual(parrot.name, 'Polly', 'the parrot has a name');
         });
 
@@ -17,6 +18,12 @@
             assert.isArray(crow.layEggs(), 'crow returns an array of Bird objects');
         });
 
+        test('flight function must have an argument', function() {
+            var dove = new window.zoo.Bird('Speedy');
+            assert.throws(function() {
+                dove.flight();
+            }, Error);
+        });
 
 
     });
