@@ -39,6 +39,9 @@
         if(!duration) {
             throw new Error('must input the number of minutes bird was flying');
         }
+        if(typeof(duration) !== 'number') {
+            throw new TypeError('Must input a number');
+        }
         var hours = duration/60;
         var speed = 60;
         var miles = speed * hours;
