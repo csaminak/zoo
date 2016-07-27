@@ -19,12 +19,12 @@
      * and gives an array of eggs that are new Birds.
      * @return {Array}  each index in the array is a Bird object
      */
-    ns.Bird.prototype.layEggs = function layEggs(){
+    ns.Bird.prototype.layEggs = function layEggs() {
         var nest = [];
         var eggs = Math.ceil(Math.random()*10);
         var i;
         for(i = 1; i <= eggs; i++) {
-            nest.push(new ns.Bird('egg ' + i));
+            nest.push(new ns.Bird('egg-' + i));
         }
         return nest;
     };
@@ -35,7 +35,7 @@
      * @param  {Number}     duration     Must be in minutes
      * @return {Number}     miles          The total distance in miles
      */
-    ns.Bird.prototype.flight = function flight(duration){
+    ns.Bird.prototype.flight = function flight(duration) {
         if(!duration) {
             throw new Error('must input the number of minutes bird was flying');
         }

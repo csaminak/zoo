@@ -1,4 +1,4 @@
-(function(ns){
+(function(ns) {
     'use strict';
     window.zoo = ns = (ns || {});
 
@@ -21,9 +21,12 @@
      * @param  {String}  puppyName  the name of the new Dog object
      * @return {Object}             a Dog object
      */
-    ns.Dog.prototype.birth = function birth(puppyName){
-        if (!puppyName){
+    ns.Dog.prototype.birth = function birth(puppyName) {
+        if (!puppyName) {
             throw new Error('What is the puppy\'s name?');
+        }
+        if (typeof(puppyName) !== 'string') {
+            throw new TypeError('puppy must have a name in a string of letters');
         }
         return new ns.Dog(puppyName);
     };
@@ -36,9 +39,17 @@
      * @return {String}           A string with the type of trick the dog knows
      */
     ns.Dog.prototype.tricks = function tricks(num) {
-        if (!num) {
-            throw new Error('a number from 1-5 is need to give a trick');
-        } else if (num === 1) {
+        if (num === null || num === undefined) {
+            throw new Error('a number from 1-5 is needed to give a trick');
+        }
+        if (typeof(num) !== 'number') {
+            throw new TypeError('Must give a number from 1 to 5');
+        }
+        if ((num < 1) || (num > 5)) {
+            throw new RangeError('Number must be an integer from 1 to 5');
+        }
+
+        if (num === 1) {
             return 'Dog knows speak, woof!';
         } else if (num === 2) {
             return 'Dog knows how to shake hands!';
