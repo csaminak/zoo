@@ -18,11 +18,24 @@
             assert.isArray(crow.layEggs(), 'crow returns an array of Bird objects');
         });
 
-        test('flight function must have an argument', function() {
+        test('flight method must have an argument', function() {
             var dove = new window.zoo.Bird('Speedy');
             assert.throws(function() {
                 dove.flight();
             }, Error);
+        });
+
+        test('flight method must be a number', function() {
+            var robin = new window.zoo.Bird('Patty');
+            assert.throws(function(){
+                robin.flight('1');
+            }, TypeError);
+            assert.throws(function(){
+                robin.flight([1, 2]);
+            }, TypeError);
+            assert.throws(function(){
+                robin.flight({});
+            }, TypeError);
         });
 
         test('if bird dies, animal cannot getAge', function() {
