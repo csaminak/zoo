@@ -11,6 +11,9 @@
         if (!name) {
             throw new Error('Animals must have a name');
         }
+        if (typeof(name) !== 'string') {
+            throw new TypeError('name must be a string of letters');
+        }
         this.name = name;
         this.dob = new Date();
         this.isDead = false;

@@ -16,6 +16,21 @@
             }, Error);
         });
 
+        test('name inputted for any animal can only be a string', function(){
+            assert.throws(function(){
+                var chipmunk = new window.zoo.Animal(123);
+            }, TypeError);
+            assert.throws(function(){
+                var racoon = new window.zoo.Animal(['a']);
+            }, TypeError);
+            assert.throws(function(){
+                var squirrel = new window.zoo.Animal({});
+            }, TypeError);
+            assert.throws(function(){
+                var beaver = new window.zoo.Animal(true);
+            }, TypeError);
+        });
+
         test('animal constructor has a dob', function() {
             var squirtle = new window.zoo.Animal('Jade');
             var date = new Date();
