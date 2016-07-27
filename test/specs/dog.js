@@ -27,13 +27,48 @@
             }, Error);
         });
 
-        test('trick function must have an argument', function() {
+        test('birth function must have a string argument', function() {
+            var sheperd = new window.zoo.Dog('Mary');
+            assert.throws(function(){
+                sheperd.birth(1);
+            }, TypeError);
+            assert.throws(function(){
+                sheperd.birth(['Lana']);
+            }, TypeError);
+            assert.throws(function(){
+                sheperd.birth({name: 'Lana'});
+            }, TypeError);
+        });
+
+        test('tricks function must have an argument', function() {
             var chow = new window.zoo.Dog('joker');
             assert.throws(function(){
                 chow.tricks();
             }, Error);
         });
 
+        test('tricks function can only accept a number', function() {
+            var lab = new window.zoo.Dog('Max');
+            assert.throws(function(){
+                lab.tricks('1');
+            }, TypeError);
+            assert.throws(function(){
+                lab.tricks({});
+            }, TypeError);
+            assert.throws(function(){
+                lab.tricks([4]);
+            }, TypeError);
+        });
+
+        test('tricks function can only pass a number from 1 to 5', function() {
+            var pug = new window.zoo.Dog('Melody');
+            assert.throws(function(){
+                pug.tricks(9);
+            }, RangeError);
+            assert.throws(function(){
+                pug.tricks(0);
+            }, RangeError);
+        });
     });
 
 
